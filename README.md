@@ -8,17 +8,29 @@ Originally built for hashfor.me, this project is a quick hack together of resour
 You can generate:
 
 SHA3
+
 BMW
+
 Halfskein
+
 MD5
+
 SHABAL
+
 Cube Hash
+
 AES
+
 SHA1
+
 SHA256
+
 SHA512
+
 BLAKE
+
 Rabbit
+
 RIPEMD-160
 
 View a live version at http://hashfor.me
