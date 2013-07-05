@@ -36,3 +36,7 @@ RIPEMD-160
 View a live version at http://hashfor.me
 
 Licensed under BSD-3, Enjoy!
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ryanmcdonough/hashgenerator/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
