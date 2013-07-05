@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <meta charset="utf-8">
+    <title>hashgen</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600"
+        rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    
+    <!--[if lt IE 7]><link rel="stylesheet" href="assets/css/bootstrap-ie6.min.css"><![endif]-->
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+   
+</head>
+<body>
+	<header>
+
+		<nav>
+	<div class="container">
+		<div class="row">
+		<div class="span2">
+			<a href="index.html" class="brand">hashgen</a>
+		</div>
+	</div>
+				
+		</div>
+</nav>
+		<section class="container">
+		<div class="row">
+		<div class="span2">
+		<h1 id="tell_base" class="tellme">&nbsp;</h1>
+		</div>
+		<div class="span2 offset6">
+		<h1 id="tell_salt" class="tellme">&nbsp;</h1>
+		</div>
+		</div>
+				<div class="row">
+				<div id="plain_holder" class="span8 offset2">
+				<input class="span8 hash" id="plain_input" placeholder="Just start typing..." onkeyup="hash_it()"></input>
+				<p class="span2 offset6 salty" id="salt_show">Add a little salt?</p>
+				</div>
+				<div id="salt_box" class="span4 hide">
+				
+				<div class="input-append">
+  <input class="span3 hash appendy" placeholder="Type or hit the random icon..." id="salt_input" onkeyup="hash_it()"></input>
+  <button class="btn btn-xlarge" id="salt_random" type="button"><i class="icon-random"></i></button>
+</div>			
+				
+	
+				</div>
+				</div>		
+		</section>
+
+	</header>
+<div class="member-box">
+		<div class="container">
+        <div class="row">
+            <div class="span2 offset10">
+					
+            </div>
+        </div>
+	</div>
+	</div>
+	<div class="container">
+        <div class="row">
+			
+            <div id="further_front" class="span12">
+				<div data-hull-widget="home"></div>
+            </div>
+        </div>
+        <div id="results" class="row hide">
+            <div class="span3">
+				<h3>Share & Copy</h3>
+				<hr />
+               	<p>To share a hash via e-mail click the <i class="icon-share"></i> icon.</p>
+                <p>To copy a hash to clipboard click the <i class="icon-copy"></i> icon.</p>
+			</div>
+            <div class="span8 offset1">
+                <h3>
+					So we've done all the math and...</h3>
+					
+					<hr />
+						
+					<h4>Popular</h4>
+                <div class="input-prepend input-append">
+                    <span class="add-on desc">MD5</span>
+                    <input class="span6" id="md5_result" type="text">
+                    <button id="copy-md5" class="btn clip" data-clipboard-target="md5_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+                        <i class="icon-copy"></i>
+                    </button>
+                    <a class="btn" id="share-md5" title="Share" data-toggle="tooltip" type="button">
+                        <i class="icon-share"></i>
+                    </a>
+                </div>
+				
+				<div class="input-prepend input-append">
+                    <span class="add-on desc">SHA3</span>
+                    <input class="span6" id="sha3_result" type="text">
+                    <button id="copy-sha3" class="btn clip" data-clipboard-target="sha3_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+                        <i class="icon-copy"></i>
+                    </button>
+                    <a class="btn" id="share-sha3" title="Share" data-toggle="tooltip" type="button">
+                        <i class="icon-share"></i>
+                    </a>
+                </div>	
+				
+				<div class="input-prepend input-append">
+	                    <span class="add-on desc">SHA1</span>
+	                    <input class="span6" id="sha1_result" type="text">
+	                    <button id="copy-sha1" class="btn clip" data-clipboard-target="sha1_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+	                        <i class="icon-copy"></i>
+	                    </button>
+	                   <a class="btn" id="share-md5" title="Share" data-toggle="tooltip" type="button">
+	                        <i class="icon-share"></i>
+	                    </a>
+	                </div>
+			<div class="input-prepend input-append">
+                    <span class="add-on desc">SHA256</span>
+                    <input class="span6" id="sha256_result" type="text">
+                    <button id="copy-sha256" class="btn clip" data-clipboard-target="sha256_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+                        <i class="icon-copy"></i>
+                    </button>
+                    <a class="btn" id="share-sha256" title="Share" data-toggle="tooltip" type="button">
+                        <i class="icon-share"></i>
+                    </a>
+                </div>
+				
+				<hr />
+				<div class="input-prepend input-append">
+	                    <span class="add-on desc">AES</span>
+	                    <input class="span6" id="aes_result" type="text">
+	                    <button id="copy-aes" class="btn clip" data-clipboard-target="aes_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+	                        <i class="icon-copy"></i>
+	                    </button>
+	                    <a class="btn" id="share-aes" title="Share" data-toggle="tooltip" type="button">
+	                        <i class="icon-share"></i>
+	                    </a>
+	                </div>	
+				
+												
+					<div class="input-prepend input-append">
+		                    <span class="add-on desc">BLAKE</span>
+		                    <input class="span6" id="blake_result" type="text">
+		                    <button id="copy-blake" class="btn clip" data-clipboard-target="blake_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+		                        <i class="icon-copy"></i>
+		                    </button>
+		                    <a class="btn" id="share-blake" title="Share" data-toggle="tooltip" type="button">
+		                        <i class="icon-share"></i>
+		                    </a>
+		                </div>	
+						
+				<div class="input-prepend input-append">
+                    <span class="add-on desc">BMW</span>
+                    <input class="span6" id="bmw_result" type="text">
+                    <button id="copy-bmw" class="btn clip" data-clipboard-target="bmw_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+                        <i class="icon-copy"></i>
+                    </button>
+                    <a class="btn" id="share-bmw" title="Share" data-toggle="tooltip" type="button">
+                        <i class="icon-share"></i>
+                    </a>
+                </div>	
+				
+				<div class="input-prepend input-append">
+                    <span class="add-on desc">CUBE</span>
+                    <input class="span6" id="cubehash_result" type="text">
+                    <button id="copy-cube" class="btn clip" data-clipboard-target="cubehash_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+                        <i class="icon-copy"></i>
+                    </button>
+                   <a class="btn" id="share-cube" title="Share" data-toggle="tooltip" type="button">
+                        <i class="icon-share"></i>
+                    </a>
+                </div>	
+
+				<div class="input-prepend input-append">
+                    <span class="add-on desc">HS</span>
+                    <input class="span6" id="halfskein_result" type="text">
+                    <button id="copy-hs" class="btn clip" data-clipboard-target="halfskein_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+                        <i class="icon-copy"></i>
+                    </button>
+                    <a class="btn" id="share-hs" title="Share" data-toggle="tooltip" type="button">
+                        <i class="icon-share"></i>
+                    </a>
+                </div>	
+
+				<div class="input-prepend input-append">
+                    <span class="add-on desc">SHABAL</span>
+                    <input class="span6" id="shabal_result" type="text">
+                    <button id="copy-shabal" class="btn clip" data-clipboard-target="shabal_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+                        <i class="icon-copy"></i>
+                    </button>
+                   <a class="btn" id="share-shabal" title="Share" data-toggle="tooltip" type="button">
+                        <i class="icon-share"></i>
+                    </a>
+                </div>	
+
+				
+				<div class="input-prepend input-append">
+	                    <span class="add-on desc">SHA512</span>
+	                    <input class="span6" id="sha512_result" type="text">
+	                    <button id="copy-sha512" class="btn clip" data-clipboard-target="sha512_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+	                        <i class="icon-copy"></i>
+	                    </button>
+	                    <a class="btn" id="share-sha512" title="Share" data-toggle="tooltip" type="button">
+	                        <i class="icon-share"></i>
+	                    </a>
+	                </div>	
+					
+					<div class="input-prepend input-append">
+		                    <span class="add-on desc">Rabbit</span>
+		                    <input class="span6" id="rabbit_result" type="text">
+		                    <button id="copy-rabbit" class="btn clip" data-clipboard-target="rabbit_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+		                        <i class="icon-copy"></i>
+		                    </button>
+		                    <a class="btn" id="share-rabbit" title="Share" data-toggle="tooltip" type="button">
+		                        <i class="icon-share"></i>
+		                    </a>
+		                </div>
+
+					<div class="input-prepend input-append">
+		                    <span class="add-on desc">RIPEMD-160</span>
+		                    <input class="span6" id="ripe160_result" type="text">
+		                    <button id="copy-ripe" class="btn clip" data-clipboard-target="ripe160_result" title="Copy to clipboard" data-toggle="tooltip" type="button">
+		                        <i class="icon-copy"></i>
+		                    </button>
+		                    <a class="btn" id="share-ripe160" title="Share" data-toggle="tooltip" type="button">
+		                        <i class="icon-share"></i>
+		                    </a>
+		                </div>						
+			
+												
+					
+				
+										
+            </div>
+        </div>
+    </div>
+    </div>
+
+	<footer>
+		<p>Built by <a href="http://twitter.com/ryanmcdonough">@ryanmcdonough</a> | <a href="http://ryanmcdonough.co.uk/">ryanmcdonough.co.uk</a></p>
+	</footer>
+	
+	<script src="assets/js/crypto/sha3.js"></script>
+    <script src="assets/js/crypto/bmw.min.js"></script>
+    <script src="assets/js/crypto/md5.min.js"></script>
+    <script src="assets/js/crypto/shabal.min.js"></script>
+    <script src="assets/js/crypto/halfskein.min.js"></script>
+    <script src="assets/js/crypto/cubehash.min.js"></script>
+    <script src="assets/js/crypto/sha256.min.js"></script>
+	<script src="assets/js/crypto/aes.js"></script>
+	<script src="assets/js/crypto/sha1.js"></script>
+	<script src="assets/js/crypto/sha512.js"></script>
+	<script src="assets/js/crypto/blake32.js"></script>
+	<script src="assets/js/crypto/rabbit.js"></script>
+	<script src="assets/js/crypto/ripemd160.js"></script>
+
+    <script type="text/javascript" src="assets/js/bootstrap/ZeroClipboard.min.js"></script>
+    <script type="text/javascript" src="assets/js/site/app.js"></script>
+	
+</body>
+
+</html>
