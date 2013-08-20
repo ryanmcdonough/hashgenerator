@@ -37,4 +37,4 @@ RIPEMD-160
 
 View a live version at http://hashfor.me
 
-Licensed under BSD-3, Enjoy!
+Licensed under BSD-3 Enjoy!
