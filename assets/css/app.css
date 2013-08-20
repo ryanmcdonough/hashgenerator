@@ -39,6 +39,8 @@ nav a.brand:hover {
  .btn { background-image: none;}
  
  .desc { width: 70px; }
+
+ .blake2-details { font-size:11px; margin-right:85px; }
  
  .tellme {
  font-family: 'Satisfy',sans-serif;

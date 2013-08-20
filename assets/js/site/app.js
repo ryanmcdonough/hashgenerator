@@ -36,6 +36,21 @@ function random_salt() {
     $('#salt_input').val(text);
 }
 
+function BLAKE2Gen(digestLength, key, input) {
+        var msg = input;
+        var length = digestLength;
+        var key = key;
+        // Unix line breaks.
+        msg = msg.replace(/\r\n/g, '\n');
+        try {
+          var h = new BLAKE2s(length, key);
+        } catch (e) {
+          alert("Error: " + e);
+        }
+        h.update(msg);
+        return h.hexDigest();
+      }
+
 function hash_it() {
 
     $("#further_front").fadeOut("slow", function () {
@@ -46,6 +61,11 @@ function hash_it() {
     var salt = $('#salt_input').val();
 
     var salted = plain + salt;
+
+    var blake_output = BLAKE2Gen(32, salt, plain);
+
+    $('#blake2_result').val(blake_output);
+    $("#share-blake2").attr("href", "mailto:?subject=BLAKE2 Hash&body=Original: " + salted + " // MD5: " + $('#blake2_result').val())
 	
     $('#md5_result').val(md5(salted));
     $("#share-md5").attr("href", "mailto:?subject=MD5 Hash&body=Original: " + salted + " // MD5: " + $('#md5_result').val())
