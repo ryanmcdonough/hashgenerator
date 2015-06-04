@@ -1,0 +1,49 @@
+﻿<section id="generate-hash">
+    <div class="row">
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="control-label">&nbsp;</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">Range</span>
+                        <input type="number" class="form-control" id="range_input" placeholder="If nothing specified we'll default to 10000">
+                    </div>
+                </div>
+            </div>       
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="control-label">&nbsp;</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">Count</span>
+                        <input type="number" class="form-control" id="count_input" placeholder="If nothing specified we'll default to 10000">
+       
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-md-2">
+            <div class="form-group">
+                <label class="control-label">&nbsp;</label>
+                <div class="input-group">
+                    <button class="btn btn-success" onclick="generateRandom()">Generate</button>
+                </div>
+        </div>
+        </div>
+
+        </div>
+    <hr />
+</section>
+
+<section id="what_is_prng">
+  
+    <p>This app uses the <a href="https://github.com/ryanmcdonough/jQuery.uheprnGen">jQuery.UHEPRNG plugin</a> to generate blocks of ultra high entropy psuedo random numbers.</p>
+    <p>This carefully designed PRNG utilizes more than 1536 bits of internal “state” memory. The operating parameters of the generator's algorithm were carefully chosen (it uses a “safe prime” factor) to guarantee that every possible PRNG “state” is visited before the sequence begins to repeat. The result is that the “period” of this generator will be the “Germain prime” 1,768,863 x 21535 - 1, which is approximately 2.132 x 10468. This is such a large number that it might as well be infinite. This generator effectively never repeats.</p>
+    <p>For our purposes, a “SeedKey” (such as the one above) is used to initialize the PRNG to a pseudo-randomly chosen point in this incredibly large loop of unpredictable pseudo-random numbers, from which we then pull as many pseudo-random values as we need. The 256-character “SeedKey” uses the 94 printable ASCII characters (spaces are ignored). Therefore, this yields 94256 possible seedkeys. This is 1.32 x 10505 possible strings, which is equivalent to 1,678 bits of entropy. Since this is greater than the total entropic state of the UHEPRNG, a SeedKey of this length and complexity is sufficient (and necessary) to fully initialize a PRNG of this complexity.</p>
+</section>
+
+<section id="random_results">
+
+
+</section>
+
