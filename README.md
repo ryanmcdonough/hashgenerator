@@ -3,7 +3,7 @@ hashgenerator
 
 Browser based hash generation, making use of CryptoJS to allow you to self host a quick and easy hash generator.
 
-You can now also use hashgenerator to attempt to identify which types of hash an input may be.
+You can now also use hashgenerator to attempt to identify which types of hash an input may be and also generate Pseudo Random Numbers. These both use the hashIdentity and uheprng plugins also on my github profile.
 
 Originally built for hashfor.me, this project is a quick hack together of resources to allow you to generate hashes with ease.</p>
 
